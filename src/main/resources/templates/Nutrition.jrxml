@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6777c0d0-1449-4bee-825c-13a7a29811b8">
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+    <parameter name="firstName" class="java.lang.String"/>
+    <parameter name="lastName" class="java.lang.String"/>
+    <parameter name="dob" class="java.lang.String"/>
+    <parameter name="age" class="java.lang.Integer"/>
+    <queryString language="SQL">
+        <![CDATA[select * from Address;]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="80" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="9" y="0" width="540" height="80" backcolor="#FA1D19" uuid="710899ed-f611-474f-a7f6-6b03c23f386c"/>
+                <staticText>
+                    <reportElement mode="Transparent" x="20" y="20" width="150" height="34" forecolor="#FFFFFF" uuid="89d324dd-b471-452a-974d-8fc1987ee4bc"/>
+                    <textElement textAlignment="Left">
+                        <font size="16" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Nutrition Property]]></text>
+                </staticText>
+                <textField>
+                    <reportElement x="445" y="0" width="86" height="19" uuid="518c7d48-202f-441f-8c9d-bee7df074fe4"/>
+                    <textElement textAlignment="Right">
+                        <font size="12"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$P{firstName}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="445" y="21" width="94" height="18" uuid="b8a2920c-2b78-4f99-b114-4d00dbf6eff2"/>
+                    <textElement textAlignment="Right">
+                        <font size="12"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["DOB: "+$P{dob}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="445" y="40" width="94" height="30" uuid="3536d57d-35aa-4621-8f80-9f7cf60e7e05"/>
+                    <textElement textAlignment="Right">
+                        <font size="12"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA["Age : "+$P{age}]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="37" splitType="Stretch">
+            <frame>
+                <reportElement x="280" y="7" width="259" height="30" uuid="86582fcb-99d4-44e1-8009-a393b571d69e"/>
+                <staticText>
+                    <reportElement x="30" y="6" width="110" height="19" uuid="aedcb169-ce2a-4e19-9e96-418d37d872ff"/>
+                    <textElement textAlignment="Left">
+                        <font size="11"/>
+                    </textElement>
+                    <text><![CDATA[Report Generated On]]></text>
+                </staticText>
+                <textField pattern="MMMMM dd, yyyy">
+                    <reportElement x="144" y="6" width="98" height="18" uuid="a09e3d4e-3d8a-4e38-9ec7-a4b37439a500"/>
+                    <textElement textAlignment="Left">
+                        <font size="11"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+                </textField>
+            </frame>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch"/>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
